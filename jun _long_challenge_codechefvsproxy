@@ -3,7 +3,7 @@
 #include <string.h>
 
 using namespace std;
-int fun(string g){
+float fun(string g){
     int p=0;
     for(int i=0;i<g.size();i++){
         if(g[i]=='P')
@@ -16,26 +16,37 @@ int n;
 cin>>n;
 while(n--){
     int l,cnt=0;
+    float o;
     cin>>l;
-    string a;
+    string a,b;
     cin>>a;
-    for(int i=2;i<=l-3;i++){
-        if(a[i]=='A' && ((a[i-1]=='P') || (a[i-2]=='P') || (a[i+1]=='P') || (a[i+2]=='P'))){
-            a[i]='P';
+    b=a;    
+    for(int i=2;i<= a.size()-3;i++){
+        if((a[i]=='A') && ((a[i-1]=='P') || (a[i-2]=='P') || (a[i+1]=='P') || (a[i+2]=='P'))){
+            b[i]='P';
             cnt++;
-             if(fun(a)/9 >= 0.75){
+            o=fun(b)/b.size();
+            if(o >= 0.75)
+            {
                 cout<<cnt;
-            break;
-            
+                break;
+            }
+        
+         }
+             
+
+         
         }
-        }
-       
-                
-                
-            
+        if(o < 0.75)
+            cout<<"-1";
+        
     }
+   
 }
-}
+   
+    
+
+
 
     
 
