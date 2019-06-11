@@ -1,0 +1,44 @@
+
+#include <iostream>
+#include <string.h>
+
+using namespace std;
+int fun(string g){
+    int p=0;
+    for(int i=0;i<g.size();i++){
+        if(g[i]=='P')
+            p++;
+    }
+    return p;
+}
+int main() {
+int n;
+cin>>n;
+while(n--){
+    int l,cnt=0;
+    cin>>l;
+    string a;
+    cin>>a;
+    for(int i=2;i<=l-3;i++){
+        if(a[i]=='A' && ((a[i-1]=='P') || (a[i-2]=='P') || (a[i+1]=='P') || (a[i+2]=='P'))){
+            a[i]='P';
+            cnt++;
+             if(fun(a)/9 >= 0.75){
+                cout<<cnt;
+            break;
+            
+        }
+        }
+       
+                
+                
+            
+    }
+}
+}
+
+    
+
+
+
+
